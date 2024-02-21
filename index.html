@@ -35,11 +35,28 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="w3-colors-flat.css">
 </head> 
+ 
+<script>  
+	var Bratzscore = 0;
+	var  BarbieScore = 0;
 
-<script>
-
-	//YOUR JAVASCRIPT GOES HERE
-
+	function updateScore (choice) {
+		if (choice === 'BRATZ') {
+			bratzScore++;
+		} else if ( choice === 'BARBIE') {
+			barbieScore++;
+		} 
+	}
+	function getDiagnosis() {
+		var resuLtText = document.getElementById("results");
+		if (bratzScore > barbieScore) {
+			resultText.innerHTML = " You're a Bratz!";
+		} else if (bratzScore < barbieScore) {
+			resultText.innerHTML = "You're a Barbie !";
+		} else { 
+			resultText.innnerHTML = " You have equal tendencies towards Bratz and Barbie!";
+		}
+	}
 </script>	
 
 
