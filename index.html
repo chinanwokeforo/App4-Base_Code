@@ -28,14 +28,13 @@ https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
-<head> 
-	<title> are you a BRATZ or BARBIE ? </title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="stylesheet" href="w3.css">
-	<link rel="stylesheet" href="w3-colors-flat.css">
-</head> 
- 
+<head>
+    <title>Are you a BRATZ or BARBIE?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="w3-colors-flat.css">
+
 <script>  
 	var Bratzscore = 0;
 	var  BarbieScore = 0;
@@ -67,8 +66,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
-<style>	
-	body {
+<style>
+        /* Your styles here */
+        body {
             background-color: #FFC0CB; /* Pink background color */
             color: #000000; /* Black text color */
         }
@@ -91,7 +91,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             background-color: #FF69B4 !important; /* Pink background color for headers */
             color: #FFFFFF !important; /* White text color for headers */
         }
-	  /* Styles for Results Page */
+
+        /* Styles for Results Page */
         .bratz-result {
             background-color: #800080 !important; /* Purple background color for Bratz result */
             color: #FFFFFF !important; /* White text color for Bratz result */
@@ -107,27 +108,28 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             text-align: center; /* Center align text */
             padding: 20px; /* Add padding for better visibility */
         }
-    
-.body {
-     margin: 0em;
-}
 
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
+        .body {
+            margin: 0em;
+        }
 
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
-</style>
+        .page {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -100vw;
+            overflow-y: auto;
+            z-index: 0;
+            background-color: hsl(0,0%,100%);
+        }
+
+        .page:target {
+            left: 0vw;
+            z-index: 1;
+        }
+    </style>
+</head>
 
 <body>
 	
