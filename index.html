@@ -33,36 +33,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="w3.css">
-    <link rel="stylesheet" href="w3-colors-flat.css">
-
-<script>  
-	var Bratzscore = 0;
-	var  BarbieScore = 0;
-
-	function updateScore (choice) {
-		if (choice === 'BRATZ') {
-			bratzScore++;
-		} else if ( choice === 'BARBIE') {
-			barbieScore++;
-		} 
-	}
-	function getDiagnosis() {
-            var resultText = document.getElementById("results");
-            if (bratzScore > barbieScore) {
-                resultText.innerHTML = "You're more inclined towards Bratz!";
-                resultText.classList.add("bratz-result");
-                resultText.innerHTML += '<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*gh2ViP19N-uYuwEzPzg88Q.jpeg" alt="Bratz Image" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">';
-            } else if (bratzScore < barbieScore) {
-                resultText.innerHTML = "You're more inclined towards Barbie!";
-                resultText.classList.add("barbie-result");
-                resultText.innerHTML += '<img src="https://i.insider.com/64b57cfa64dab3001999f782?width=2000&format=jpeg&auto=webp" alt="Barbie Image" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">';
-            } else {
-                resultText.innerHTML = "You have equal tendencies towards Bratz and Barbie!";
-                resultText.classList.add("equal-tendencies-result");
-                resultText.innerHTML += '<img src="https://assets.teenvogue.com/photos/64c28cc217534afc665b9291/16:9/w_1600,c_limit/barbiebratz1.jpg" alt="Equal Tendencies Image" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">';
-            }
-        }
-</script>	
+    <link rel="stylesheet" href="w3-colors-flat.css">	
 
 
 <!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
@@ -220,16 +191,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>
 <!-- Results page -->
 	<div class="page" id="resultsPage">
-        <div class="w3-container w3-flat-carrot">
-            <h1>Results</h1>
-        </div>
-
-        <div class="w3-container">
-            <p id="results"></p>
-            <a onclick="getDiagnosis()" class="w3-btn">Get Diagnosis</a>
-        </div>
+    <div class="w3-container w3-flat-carrot">
+        <h1>Results</h1>
     </div>
-	<!-- Script -->
+
+    <div class="w3-container">
+        <p id="results"></p>
+        <a onclick="getDiagnosis()" class="w3-btn">Get Diagnosis</a>
+    </div>
+</div>
+
+<!-- Script -->
 <script>
     // Variables to store scores
     var bratzScore = 0;
@@ -239,11 +211,33 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     function updateScore(choice) {
         if (choice === 'BRATZ') {
             bratzScore++;
-        } else if (choice === 'BAR
-</div>
+        } else if (choice === 'BARBIE') {
+            barbieScore++;
+        }
+    }
 
+    // Function to display diagnosis based on scores
+    function getDiagnosis() {
+        var resultText = document.getElementById("results");
+        if (bratzScore > barbieScore) {
+            resultText.innerHTML = "You're more inclined towards Bratz!";
+            resultText.classList.add("bratz-result");
+            resultText.innerHTML += '<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*gh2ViP19N-uYuwEzPzg88Q.jpeg" alt="Bratz Image" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">';
+        } else if (bratzScore < barbieScore) {
+            resultText.innerHTML = "You're more inclined towards Barbie!";
+            resultText.classList.add("barbie-result");
+            resultText.innerHTML += '<img src="https://i.insider.com/64b57cfa64dab3001999f782?width=2000&format=jpeg&auto=webp" alt="Barbie Image" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">';
+        } else {
+            resultText.innerHTML = "You have equal tendencies towards Bratz and Barbie!";
+            resultText.classList.add("equal-tendencies-result");
+            resultText.innerHTML += '<img src="https://assets.teenvogue.com/photos/64c28cc217534afc665b9291/16:9/w_1600,c_limit/barbiebratz1.jpg" alt="Equal Tendencies Image" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">';
+        }
+    }
+</script>
+
+<!-- Footer -->
 <footer class="w3-bottom w3-container">
-    <p> MWAH NO BARS !</p>
+    <p>MWAH NO BARS!</p>
 </footer>
 </body>
 </html>
