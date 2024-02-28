@@ -48,15 +48,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		} 
 	}
 	function getDiagnosis() {
-		var resuLtText = document.getElementById("results");
-		if (bratzScore > barbieScore) {
-			resultText.innerHTML = " You're a Bratz!";
-		} else if (bratzScore < barbieScore) {
-			resultText.innerHTML = "You're a Barbie !";
-		} else { 
-			resultText.innnerHTML = " You have equal tendencies towards Bratz and Barbie!";
-		}
-	}
+            var resultText = document.getElementById("results");
+            if (bratzScore > barbieScore) {
+                resultText.innerHTML = "You're more inclined towards Bratz!";
+                resultText.classList.add("bratz-result");
+                resultText.innerHTML += '<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*gh2ViP19N-uYuwEzPzg88Q.jpeg" alt="Bratz Image" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">';
+            } else if (bratzScore < barbieScore) {
+                resultText.innerHTML = "You're more inclined towards Barbie!";
+                resultText.classList.add("barbie-result");
+                resultText.innerHTML += '<img src="https://i.insider.com/64b57cfa64dab3001999f782?width=2000&format=jpeg&auto=webp" alt="Barbie Image" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">';
+            } else {
+                resultText.innerHTML = "You have equal tendencies towards Bratz and Barbie!";
+                resultText.classList.add("equal-tendencies-result");
+                resultText.innerHTML += '<img src="https://assets.teenvogue.com/photos/64c28cc217534afc665b9291/16:9/w_1600,c_limit/barbiebratz1.jpg" alt="Equal Tendencies Image" style="width: 100%; max-width: 500px; display: block; margin: 20px auto;">';
+            }
+        }
 </script>	
 
 
@@ -85,6 +91,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             background-color: #FF69B4 !important; /* Pink background color for headers */
             color: #FFFFFF !important; /* White text color for headers */
         }
+	  /* Styles for Results Page */
+        .bratz-result {
+            background-color: #800080 !important; /* Purple background color for Bratz result */
+            color: #FFFFFF !important; /* White text color for Bratz result */
+            font-size: 24px; /* Larger text size for Bratz result */
+            text-align: center; /* Center align text */
+            padding: 20px; /* Add padding for better visibility */
+        }
+
+        .barbie-result {
+            background-color: #FF69B4 !important; /* Pink background color for Barbie result */
+            color: #FFFFFF !important; /* White text color for Barbie result */
+            font-size: 24px; /* Larger text size for Barbie result */
+            text-align: center; /* Center align text */
+            padding: 20px; /* Add padding for better visibility */
+        }
+    
 .body {
      margin: 0em;
 }
@@ -191,6 +214,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         <a href="#resultsPage" onclick="updateScore('BARBIE');" class="w3-btn">Sprite</a>
     </div>
 </div>
+<!-- Results page -->
 	
 </body>
 </html>
