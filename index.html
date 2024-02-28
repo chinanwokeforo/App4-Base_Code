@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 this app will diagnose if a person is more Bratz or Barbie. 
 	
 Known Issues:
-so far no problems 
+had trouble getting my results to show and geting rid of random bracket 
 
 
 References:
@@ -225,6 +225,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             <a onclick="getDiagnosis()" class="w3-btn">Get Diagnosis</a>
         </div>
     </div>
+	<!-- Script -->
+<script>
+    // Variables to store scores
+    var bratzScore = 0;
+    var barbieScore = 0;
+
+    // Function to update scores based on user choice
+    function updateScore(choice) {
+        if (choice === 'BRATZ') {
+            bratzScore++;
+        } else if (choice === 'BAR
 </div>
 
 <footer class="w3-bottom w3-container">
