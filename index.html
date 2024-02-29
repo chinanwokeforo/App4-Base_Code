@@ -114,22 +114,53 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
 
 	<!-- first/ introductory page -->
-
-    <h1>are you a BRATZ or BARBIE?</h1>
-</div>
-
+    
 <!-- Introduction -->
  <div id="header" class="w3-container w3-flat-carrot">
-        <h1>Are You a BRATZ or BARBIE?</h1>
+        <h1> are You a BRATZ or BARBIE?</h1>
     </div>
 
     <div id="content" class="w3-container">
         <!-- Resizable image section -->
-        <div class="resizable-img-container">
-            <img class="resizable-img"
-                src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/433ef098-b759-46c9-bbdc-4262db07cce6/834865c3-a105-4817-8533-33249c04effd_560_420.jpg"
-                alt="Bratz or Barbie">
-        </div>
+         <!-- Image section -->
+    <div class="resizable-img-container">
+        <img class="resizable-img" id="resize-image" src="https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/433ef098-b759-46c9-bbdc-4262db07cce6/834865c3-a105-4817-8533-33249c04effd_560_420.jpg" alt="Bratz or Barbie">
+    </div>
+
+    <!-- Content -->
+    <div class="w3-container">
+        <p>Answer a few questions to determine if you're more Bratz or Barbie!</p>
+        <a href="#one" class="w3-btn w3-round">Get Started</a>
+    </div>
+
+    <!-- Script for image resizing -->
+    <script>
+        // Enable image resizing
+        interact('#resize-image')
+            .resizable({
+                edges: { left: true, right: true, bottom: true, top: true }
+            })
+            .on('resizemove', function(event) {
+                var target = event.target;
+                var x = parseFloat(target.getAttribute('data-x')) || 0;
+                var y = parseFloat(target.getAttribute('data-y')) || 0;
+
+                // Update the image's width and height
+                target.style.width = event.rect.width + 'px';
+                target.style.height = event.rect.height + 'px';
+
+                // Update the image's position
+                x += event.deltaRect.left;
+                y += event.deltaRect.top;
+
+                target.style.webkitTransform = target.style.transform =
+                    'translate(' + x + 'px,' + y + 'px)';
+
+                // Update data attributes
+                target.setAttribute('data-x', x);
+                target.setAttribute('data-y', y);
+            });
+    </script>
 
         <p>Answer a few questions to determine if you're more Bratz or Barbie!</p>
         <a href="#one" class="w3-btn w3-round">Get Started</a>
